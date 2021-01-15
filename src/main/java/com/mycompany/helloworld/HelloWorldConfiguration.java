@@ -7,15 +7,10 @@ import javax.validation.constraints.NotEmpty;
 
 public class HelloWorldConfiguration extends Configuration {
     @NotEmpty
-    private String defaultMessage = "Hello World!";
+    private String defaultMessage;
 
     @JsonProperty
     public String getDefaultMessage() {
         return defaultMessage;
-    }
-
-    @JsonProperty
-    public void setDefaultMessage(String message) {
-        this.defaultMessage = message;
     }
 }

@@ -1,23 +1,18 @@
 package com.mycompany.helloworld.api;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class HelloWorld {
-    private long id;
     private String content;
 
-    public HelloWorld(long id, String content) {
-        this.id = id;
+    @JsonCreator
+    public HelloWorld(@JsonProperty("content") String content) {
         this.content = content;
     }
 
-    @JsonProperty
-    public long getId() {
-        return id;
-    }
-
-    @JsonProperty
-    public String getContent() {
-        return content;
+    @JsonProperty("content")
+    public String getContent(){
+        return this.content;
     }
 }

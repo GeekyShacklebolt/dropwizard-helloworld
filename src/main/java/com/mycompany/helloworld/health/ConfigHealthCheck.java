@@ -10,7 +10,7 @@ public class ConfigHealthCheck extends HealthCheck {
     }
 
     @Override
-    protected Result check() throws Exception {
+    protected Result check() {
         if (this.defaultMessage == null) {
             return Result.unhealthy("There is no default Message!");
         }
